@@ -3,230 +3,319 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Privacy Policy - Water Cam Pro</title>
+    
+    <!-- Importing Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.7;
-            color: #333;
-            max-width: 850px;
-            margin: 0 auto;
-            padding: 24px;
-            background: #ffffff;
+        :root {
+            --primary: #00A9C7;
+            --secondary: #0097B2;
+            --dark: #1A1B20;
+            --text-main: #334155;
+            --text-light: #64748b;
+            --bg-gradient: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            --card-bg: #ffffff;
         }
 
+        /* Base & Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-gradient);
+            color: var(--text-main);
+            line-height: 1.8;
+            padding: 40px 20px;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Container & Animations */
+        .policy-container {
+            max-width: 850px;
+            background: var(--card-bg);
+            padding: 50px 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+            animation: slideUp 0.8s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Headings */
         h1 {
-            color: #00A9C7;
-            margin-bottom: 5px;
+            color: var(--primary);
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
         }
 
         h2 {
-            color: #1A1B20;
-            border-bottom: 2px solid #00E5FF;
-            padding-bottom: 6px;
-            margin-top: 30px;
+            color: var(--dark);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e2e8f0;
+            position: relative;
         }
 
+        /* Animated border bottom for H2 */
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        h2:hover::after {
+            width: 100px;
+        }
+
+        /* Typography & Spacing */
         p {
-            margin: 12px 0;
+            margin-bottom: 16px;
+            font-size: 1.05rem;
         }
 
-        li {
-            margin-bottom: 8px;
+        strong {
+            color: var(--dark);
+            font-weight: 600;
         }
 
         .updated {
-            color: #777;
-            font-size: 14px;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 30px;
+            display: inline-block;
+            background: #f1f5f9;
+            padding: 6px 12px;
+            border-radius: 8px;
         }
 
         .app-name {
-            font-weight: bold;
-            color: #00A9C7;
+            font-weight: 700;
+            color: var(--primary);
         }
 
-        .footer {
-            margin-top: 50px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-            font-size: 14px;
-            color: #777;
+        /* Lists */
+        ul {
+            margin: 20px 0;
+            padding-left: 20px;
+            list-style: none;
         }
 
+        li {
+            margin-bottom: 12px;
+            position: relative;
+            padding-left: 24px;
+        }
+
+        li::before {
+            content: '•';
+            color: var(--primary);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+
+        /* Links */
         a {
-            color: #0097B2;
+            color: var(--secondary);
             text-decoration: none;
+            font-weight: 600;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: var(--primary);
+            visibility: hidden;
+            transform: scaleX(0);
+            transition: all 0.3s ease-in-out;
+        }
+
+        a:hover {
+            color: var(--primary);
+        }
+
+        a:hover::after {
+            visibility: visible;
+            transform: scaleX(1);
+        }
+
+        /* Footer */
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            font-size: 0.95rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+
+        .footer p {
+            margin-bottom: 5px;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .policy-container {
+                padding: 30px 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
         }
     </style>
 </head>
-
 <body>
 
-    <h1>Privacy Policy</h1>
-
-    <p class="updated">
-        Last updated: August 20, 2026
-    </p>
-
-    <p>
-        Welcome to <span class="app-name">Water Cam Pro</span>
-        (Watermark Camera). Your privacy is important to us.
-        This Privacy Policy explains how the app handles information,
-        permissions, photos, and third-party services.
-    </p>
-
-    <h2>1. Information We Collect</h2>
-
-    <p>
-        <strong>Photos and Media:</strong>
-        Water Cam Pro may require access to your camera and photos/media
-        to provide its core features, including taking photos, selecting
-        photos from your device, adding watermarks or frames, and reading
-        photo information such as EXIF metadata.
-    </p>
-
-    <p>
-        Your photos and media are processed locally on your device.
-        We do not intentionally upload, store, or transmit your personal
-        photos to our own servers.
-    </p>
-
-    <p>
-        <strong>Device and Usage Information:</strong>
-        Third-party services used by the app, such as advertising and
-        analytics services, may collect certain information such as device
-        information, operating system information, app usage information,
-        diagnostics, and advertising-related identifiers.
-    </p>
-
-    <h2>2. Permissions Used</h2>
-
-    <ul>
-        <li>
-            <strong>Camera:</strong>
-            Used to take photos directly within the app.
-        </li>
-
-        <li>
-            <strong>Photos / Media Access:</strong>
-            Used to select photos from your device and save processed
-            photos when required by the app.
-        </li>
-
-        <li>
-            <strong>Internet:</strong>
-            Used for services such as displaying advertisements,
-            analytics, and other network-dependent functionality.
-        </li>
-    </ul>
-
-    <h2>3. Local Photo Processing</h2>
-
-    <p>
-        The main photo-processing features of Water Cam Pro are designed
-        to process your photos on your device. We do not intentionally
-        upload your photos to our own servers for processing.
-    </p>
-
-    <p>
-        However, third-party services integrated into the application,
-        such as advertising or analytics providers, may process certain
-        device or usage information as described below.
-    </p>
-
-    <h2>4. Third-Party Services</h2>
-
-    <p>
-        Water Cam Pro may use third-party services that can collect or
-        process information according to their own privacy policies.
-    </p>
-
-    <ul>
-        <li>
-            <strong>Google Play Services:</strong>
-            Used to provide Android and Google Play related functionality.
-        </li>
-
-        <li>
-            <strong>Google AdMob:</strong>
-            Used to display advertisements. AdMob may collect and process
-            information such as advertising identifiers, device information,
-            and interaction with advertisements. Depending on the user's
-            settings and applicable regulations, advertisements may be
-            personalized or non-personalized.
-        </li>
-
-        <li>
-            <strong>Firebase Analytics:</strong>
-            If enabled in the app, Firebase Analytics may collect
-            information about app usage and interactions to help us
-            understand and improve the application.
-        </li>
-    </ul>
-
-    <h2>5. Advertising</h2>
-
-    <p>
-        Water Cam Pro may display advertisements provided by Google AdMob.
-        Advertising providers may use cookies, mobile advertising
-        identifiers, or similar technologies to provide, measure, and
-        improve advertising services.
-    </p>
-
-    <p>
-        Users may have options to control personalized advertising through
-        their device settings or Google advertising settings, where
-        available.
-    </p>
-
-    <h2>6. Children's Privacy</h2>
-
-    <p>
-        Water Cam Pro is not specifically directed toward children under
-        the age of 13. We do not knowingly collect personally identifiable
-        information from children under 13.
-    </p>
-
-    <h2>7. Data Security</h2>
-
-    <p>
-        We take reasonable measures to protect information handled by the
-        application. Because the primary photo-processing functionality
-        operates locally on your device, your personal photos are not
-        intentionally transmitted to our own servers.
-    </p>
-
-    <h2>8. Changes to This Privacy Policy</h2>
-
-    <p>
-        We may update this Privacy Policy from time to time. Any changes
-        will be posted on this page with an updated "Last updated" date.
-    </p>
-
-    <h2>9. Contact Us</h2>
-
-    <p>
-        If you have any questions, concerns, or suggestions regarding this
-        Privacy Policy, please contact us at:
-    </p>
-
-    <p>
-        <strong>Email:</strong>
-        <a href="mailto:hishamlabs@gmail.com">
-            hishamlabs@gmail.com
-        </a>
-    </p>
-
-    <div class="footer">
-        <p>
-            &copy; 2026 Hisham Labs. All rights reserved.
-        </p>
+    <div class="policy-container">
+        <h1>Privacy Policy</h1>
+        
+        <div class="updated">Last updated: August 20, 2026</div>
 
         <p>
-            Water Cam Pro - Watermark Camera
+            Welcome to <span class="app-name">Water Cam Pro</span> 
+            (Watermark Camera). Your privacy is important to us. 
+            This Privacy Policy explains how the app handles information, 
+            permissions, photos, and third-party services.
         </p>
+
+        <h2>1. Information We Collect</h2>
+        <p>
+            <strong>Photos and Media:</strong> 
+            Water Cam Pro may require access to your camera and photos/media 
+            to provide its core features, including taking photos, selecting 
+            photos from your device, adding watermarks or frames, and reading 
+            photo information such as EXIF metadata.
+        </p>
+        <p>
+            Your photos and media are processed locally on your device. 
+            We do not intentionally upload, store, or transmit your personal 
+            photos to our own servers.
+        </p>
+        <p>
+            <strong>Device and Usage Information:</strong> 
+            Third-party services used by the app, such as advertising and 
+            analytics services, may collect certain information such as device 
+            information, operating system information, app usage information, 
+            diagnostics, and advertising-related identifiers.
+        </p>
+
+        <h2>2. Permissions Used</h2>
+        <ul>
+            <li>
+                <strong>Camera:</strong> Used to take photos directly within the app.
+            </li>
+            <li>
+                <strong>Photos / Media Access:</strong> Used to select photos from your device and save processed photos when required by the app.
+            </li>
+            <li>
+                <strong>Internet:</strong> Used for services such as displaying advertisements, analytics, and other network-dependent functionality.
+            </li>
+        </ul>
+
+        <h2>3. Local Photo Processing</h2>
+        <p>
+            The main photo-processing features of Water Cam Pro are designed 
+            to process your photos on your device. We do not intentionally 
+            upload your photos to our own servers for processing.
+        </p>
+        <p>
+            However, third-party services integrated into the application, 
+            such as advertising or analytics providers, may process certain 
+            device or usage information as described below.
+        </p>
+
+        <h2>4. Third-Party Services</h2>
+        <p>
+            Water Cam Pro may use third-party services that can collect or 
+            process information according to their own privacy policies.
+        </p>
+        <ul>
+            <li><strong>Google Play Services:</strong> Used to provide Android and Google Play related functionality.</li>
+            <li><strong>Google AdMob:</strong> Used to display advertisements. AdMob may collect and process information such as advertising identifiers, device information, and interaction with advertisements. Depending on the user's settings and applicable regulations, advertisements may be personalized or non-personalized.</li>
+            <li><strong>Firebase Analytics:</strong> If enabled in the app, Firebase Analytics may collect information about app usage and interactions to help us understand and improve the application.</li>
+        </ul>
+
+        <h2>5. Advertising</h2>
+        <p>
+            Water Cam Pro may display advertisements provided by Google AdMob. 
+            Advertising providers may use cookies, mobile advertising identifiers, 
+            or similar technologies to provide, measure, and improve advertising services.
+        </p>
+        <p>
+            Users may have options to control personalized advertising through 
+            their device settings or Google advertising settings, where available.
+        </p>
+
+        <h2>6. Children's Privacy</h2>
+        <p>
+            Water Cam Pro is not specifically directed toward children under 
+            the age of 13. We do not knowingly collect personally identifiable 
+            information from children under 13.
+        </p>
+
+        <h2>7. Data Security</h2>
+        <p>
+            We take reasonable measures to protect information handled by the 
+            application. Because the primary photo-processing functionality 
+            operates locally on your device, your personal photos are not 
+            intentionally transmitted to our own servers.
+        </p>
+
+        <h2>8. Changes to This Privacy Policy</h2>
+        <p>
+            We may update this Privacy Policy from time to time. Any changes 
+            will be posted on this page with an updated "Last updated" date.
+        </p>
+
+        <h2>9. Contact Us</h2>
+        <p>
+            If you have any questions, concerns, or suggestions regarding this 
+            Privacy Policy, please contact us at:
+        </p>
+        <p>
+            <strong>Email:</strong> 
+            <a href="mailto:hishamlabs@gmail.com">hishamlabs@gmail.com</a>
+        </p>
+
+        <div class="footer">
+            <p>&copy; 2026 Hisham Labs. All rights reserved.</p>
+            <p>Water Cam Pro - Watermark Camera</p>
+        </div>
     </div>
 
 </body>
